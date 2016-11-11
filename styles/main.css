@@ -1,0 +1,117 @@
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  background-size: cover;
+  height: 100%;
+}
+.wrapper-all {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+.scale1 {
+  transform: scale(1);
+  overflow-y: auto;
+}
+.scale_small {
+  transform: scale(0.3);
+  overflow-y: hidden;
+}
+.wrap {
+  height: 70%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  text-align: center;
+}
+.block {
+  height: 100%;
+  margin: auto;
+  display: inline-block;
+}
+.block #kube {
+  height: 100%;
+  width: 100%;
+  background: #000;
+  transition: 2s all;
+  display: inline-block;
+  color: white;
+}
+.test2 {
+  height: 100%;
+  width: 11%;
+  background: #000;
+  margin: 0 -0.36em;
+  display: inline-block;
+}
+.test1 {
+  height: 100%;
+  width: 11%;
+  background: #000;
+  margin: 0 -0.36em;
+  display: inline-block;
+}
+.before-block {
+  height: 15.2%;
+  background: #000;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.after-block {
+  height: 15.1%;
+  background: #000;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.tab-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+}
+.tab-nav li {
+  float: left;
+  display: block;
+  background: yellow;
+  padding: 5px;
+  text-align: left;
+  width: auto;
+  margin: 10px 15px;
+}
+.tab-nav li a {
+  font: normal 12px Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+}
+.tab-nav li:hover {
+  color: white;
+  text-decoration: none;
+  background: #777;
+}
+.tab-nav li.select a {
+  background: #bbb;
+}
+.tab-nav .active {
+  padding: 5px;
+}
+.header-nav {
+  list-style: none;
+  color: white;
+}
+.header-nav li {
+  display: inline;
+}

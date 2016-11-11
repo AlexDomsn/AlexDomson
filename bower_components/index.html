@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <title>3D CSS Animated Cube (Demo/Experiment)</title>
+    <link rel="SHORTCUT ICON" href="http://www.codicode.com/img/Codicode.ico" type="image/x-icon" />
+    <link rel="image_src" href="http://www.codicode.com/demo/animated_3d_css_cube/animated_3d_css_cube_banner.jpg" />
+    <meta property="og:image" content="http://www.codicode.com/demo/animated_3d_css_cube/animated_3d_css_cube_banner.jpg" />
+
+    <style>
+        @import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+        body {
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 16px;
+            margin: 0px;
+        }
+    </style>
+</head>
+<body>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" type="text/javascript"></script>
+
+    <div align="center" style="direction: ltr;">
+
+        <div style="text-align:center;padding:10px;">
+            <h2>3D CSS Animated Cube</h2>
+            <div>
+                This simple 3D cube animation is a good way to get started with concepts like css3 3d transforms, translations, rotations..<br />
+
+                Check out the Tutorial and source code download : <a href="http://www.codicode.com/art/animated_3d_css_cube.aspx" target="_blank">pure CSS Animated 3D Cube</a>, by <a href="http://www.codicode.com" target="_blank">Codicode</a>.
+            </div>
+        </div>
+        <div class="wrap">
+            <div class="cube">
+                <div class="front">
+                    <h2>Front side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="back">
+                    <h2>Back side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="top">
+                    <h2>Top side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="bottom">
+                    <h2>Bottom side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="left">
+                    <h2>Left side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+                <div class="right">
+                    <h2>Right side</h2>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center;padding-top:150px;">
+            Hover the CUBE to expand!
+        </div>
+
+        <style>
+            body {
+                background-color: #eee;
+            }
+
+            .wrap {
+                margin-top: 150px;
+                perspective: 1000px;
+                perspective-origin: 50% 50%;
+                background-image: linear-gradient(135deg,#ccc 25%,#ddd 25%,#ddd 50%, #ccc 50%, #ccc 75%,#ddd 75%,#ddd 100%);
+                background-size: 80px 80px;
+                border-top: solid 3px #999;
+                border-bottom: solid 3px #999;
+                /* Background stripes animation */
+                animation: bganim 3s linear 2s infinite;
+            }
+
+            @keyframes bganim {
+                from {
+                    background-position: 0px;
+                }
+
+                to {
+                    background-position: 80px;
+                }
+            }
+
+            .cube {
+                margin: auto;
+                position: relative;
+                height: 200px;
+                width: 200px;
+                transform-style: preserve-3d;
+            }
+
+                .cube div {
+                    position: absolute;
+                    padding: 10px;
+                    box-sizing: border-box;
+                    height: 100%;
+                    width: 100%;
+                    opacity: 0.9;
+                    background-color: #000;
+                    border: solid 1px #eee;
+                    color: #fff;
+                    font: 10px arial;
+                    transition: transform 0.2s ease-in;
+                }
+
+            .front {
+                transform: translateZ(100px);
+            }
+
+            .back {
+                transform: translateZ(-100px) rotateY(180deg);
+            }
+
+            .right {
+                transform: rotateY(-270deg) translateX(100px);
+                transform-origin: top right;
+            }
+
+            .left {
+                transform: rotateY(270deg) translateX(-100px);
+                transform-origin: center left;
+            }
+
+            .top {
+                transform: rotateX(-270deg) translateY(-100px);
+                transform-origin: top center;
+            }
+
+            .bottom {
+                transform: rotateX(270deg) translateY(100px);
+                transform-origin: bottom center;
+            }
+
+            @keyframes rotate {
+                from {
+                    transform: rotateX(0deg) rotateY(0deg);
+                }
+
+                to {
+                    transform: rotateX(360deg) rotateY(360deg);
+                }
+            }
+
+            .cube {
+                animation: rotate 20s infinite linear;
+            }
+
+            .wrap:hover .front {
+                transform: translateZ(200px);
+            }
+
+            .wrap:hover .back {
+                transform: translateZ(-200px) rotateY(180deg);
+            }
+
+            .wrap:hover .right {
+                transform: rotateY(-270deg) translateZ(100px) translateX(100px);
+            }
+
+            .wrap:hover .left {
+                transform: rotateY(270deg) translateZ(100px) translateX(-100px);
+            }
+
+            .wrap:hover .top {
+                transform: rotateX(-270deg) translateZ(100px) translateY(-100px);
+            }
+
+            .wrap:hover .bottom {
+                transform: rotateX(270deg) translateZ(100px) translateY(100px);
+            }
+        </style>
+    </div>
+    <script>var addlogo = true;</script>
+    <script src="/demo/log.js" type="text/javascript"></script>
+</body>
+</html>
